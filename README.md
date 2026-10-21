@@ -94,6 +94,6 @@ python3 tools/amalgamate.py --out build/Solution.cpp
 
 | 期数 | 项目 | 题目与阅读入口 |
 |---|---|---|
-| 第38期 | [MemWeave](https://github.com/deafenken/MemWeave) | GPU显存约束调度：[论坛题解](https://bbs.huaweicloud.com/forum/thread-02127222761354471267-1-1.html) |
+| 第38期 | [MemWeave](https://github.com/XJU-ICTHUB/MemWeave) | GPU显存约束调度：[论坛题解](https://bbs.huaweicloud.com/forum/thread-02127222761354471267-1-1.html) |
 | 第39期 | SlotWeave | 固定时隙均衡：[完整题解](docs/solution.md)、[代码导读](docs/code-guide.md) |
 
