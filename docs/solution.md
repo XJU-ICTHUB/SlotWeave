@@ -68,7 +68,7 @@ E_t^{\min}=2r(s-r).
 
 例如 N=10、s=3，间隔 3、3、4 已经最均衡，该类型均匀度仍只有 6/7。
 
-![单类型整数圆环间隔](assets/02_integer_ring.png)
+![单类型整数圆环间隔](picture/02_integer_ring.png)
 
 ## 3. 稳定性与每个额外格子的价格
 
@@ -308,7 +308,7 @@ IQ 阶段包括两种互补搜索：
 
 ## 13. 一次操作的完整阅读路线
 
-![一次操作的主要流程](assets/01_operation_pipeline.png)
+![一次操作的主要流程](picture/01_operation_pipeline.png)
 
 `processOperation` 的主线可以概括为：
 
