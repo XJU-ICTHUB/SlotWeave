@@ -45,7 +45,7 @@ u_t=1-\frac{E_t}{2(s-1)(N-s)}.
 再乘该类型占整个网格的比例 s/N，得到
 
 ```math
-1-U=\frac1{2N}\sum_{t:\,2\le s_t<N}
+1-U=\frac1{2N}\sum_{t:\,2\le s_t\lt N}
 \frac{s_tE_t}{(s_t-1)(N-s_t)}.
 ```
 
@@ -164,7 +164,7 @@ V=1-\frac{M-K}{N-K}.
 记第j层候选集合为 $`C_j`$，$`p_u`$ 为候选u的真实展开位置。状态 $`DP_j(u)`$ 表示前j个新颗粒已经确定，最后一个选在候选u的最小模型代价；不同层候选带可重叠，前驱必须满足位置严格递增：
 
 ```math
-DP_j(u)=n(u)+\min_{\substack{v\in C_{j-1}\\p_v<p_u}}
+DP_j(u)=n(u)+\min_{\substack{v\in C_{j-1}\\p_v\lt p_u}}
 \{DP_{j-1}(v)+f_x(p_u-p_v)+c(v,u)\}.
 ```
 
