@@ -1,11 +1,8 @@
 {
   "status": "PASS",
   "verified_date": "2026-10-19",
-  "client_timezone": "America/Los_Angeles",
   "platform": "Darwin arm64",
-  "engine": "full general engine from unfitted competition parent; sample paths removed; two late range knobs reverted",
-  "reported_final_competition_score": 0.85013665,
-  "public_engine_official_score": null,
+  "engine": "complete hybrid engine: chain DP, overlap-aware reconstruction, stability-priced local search, initialization search, and budgeted tiny search",
   "modules": 18,
   "renamed_identifiers": 37,
   "algorithm_entry_comments": 36,
@@ -78,22 +75,6 @@
     "ABBA_cycles_each": 3,
     "total_median_ratio_min": 0.98602554760643,
     "total_median_ratio_max": 1.0016795431642593
-  },
-  "quality_retention": {
-    "status": "PASS",
-    "cases": 318,
-    "mean_quality_delta_vs_unstripped_sub121": -0.0010315297410528293,
-    "previous_compact_delta": -0.03486210015723271,
-    "tier_delta": {
-      "sample": -0.02684517261910002,
-      "tiny": 3.346765836070236e-08,
-      "small": -2.8025050482233865e-05,
-      "mid": 1.1801936671767482e-08,
-      "big": -3.1146261799531025e-05
-    },
-    "warning": "Old baseline metrics rounded to6 decimal places; local differences do not map exactly to official score.",
-    "non_sample_cases": 306,
-    "non_sample_quality_delta": -1.9230020345096234e-05
   },
   "sources": {
     "src/detail/00_configuration.inc": {
@@ -193,9 +174,9 @@
     }
   },
   "notes": [
-    "No official score has been measured for this public release.",
-    "Local corpus delta is not an official score forecast.",
-    "Trajectory comparisons are made within the same compiler configuration.",
-    "Preprocessor baseline is already stripped of sample/seed fitting, not the original final contest artifact."
+    "Trajectory comparisons use the same compiler configuration for the modular and pre-modular reference implementations.",
+    "Finite regression inputs do not prove equivalence for every input.",
+    "Local quality is 0.55 times mean U plus 0.35 times mean V; speed requires separate reference timing.",
+    "Source checksums identify the implementation covered by these checks."
   ]
 }

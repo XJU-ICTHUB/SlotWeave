@@ -1,20 +1,20 @@
 # SlotWeave：固定时隙均衡算法
 
-Candyman的华为算法挑战赛第39期个人题解与完整通用引擎。这是比赛核心算法的可读整理版。保留强制放置的链式 DP、重叠最大化分层重建、稳定性定价局部搜索、多起点初始化和极小规模搜索，按模块解释它们如何组合。
+华为算法挑战赛第39期“固定时隙均衡算法”的完整实现与算法说明。在线维护环形时隙表，在满足服务数量要求的同时，平衡分布均匀度、布局稳定性和计算开销。
 
 代码按18个模块组织，配套数学推导、模块导航和复现工具，便于理解完整算法并验证修改。
 
-作者团队报告的最终参赛成绩为 **0.85013665**。公开版从该工程的未拟合父本提取通用引擎，移除预存样例路径、输入哈希选种子和两条榜单后选参数。它没有独立官方分数；来源、整理边界和验证方法见 [来源说明](docs/provenance.md)。
+主要方法包括批量安放的链式 DP、保留旧位置的分层重建、稳定性定价局部搜索、多起点初始化和极小规模搜索。接口、状态维护和构建约定见 [实现说明](docs/provenance.md)。
 
 ## 建议阅读顺序
 
-1. [完整中文题解](docs/solution.md)：评分建模、DP转移、重建及搜索策略。
+1. [算法说明](docs/solution.md)：评分建模、DP转移、重建及搜索策略。
 2. [代码导读](docs/code-guide.md)：模块地图、推荐入口和状态变量词典。
 3. [操作流水线](src/detail/11_operation_pipeline.inc)：从一次操作串起完整算法。
 4. [链式放置 DP](src/detail/06_chain_dp.inc)与[重建层 DP](src/detail/08_rebuild_layers.inc)：阅读主要优化。
 5. [验证记录](docs/results.md)：核对整理是否改变了通用引擎的行为。
 
-## 保留的核心
+## 核心方法
 
 | 组成 | 解决什么问题 |
 |---|---|
@@ -27,7 +27,7 @@ Candyman的华为算法挑战赛第39期个人题解与完整通用引擎。这�
 | 多构造初始化、队列局搜、阈值接受 | 为在线过程构造更好的起点 |
 | 小圆环的全对搜索和有预算分支定界 | 利用极小规模允许的更细搜索 |
 
-规模档位、窗口、工作预算及固定伪随机流仍然保留，它们承担算法的性能分工。删去的是预存答案和针对榜单输入指纹的选择器，而不是所有启发式参数。它们不构成全局最优性保证。
+规模档位、候选窗口、工作预算和固定伪随机流共同控制搜索成本。这些参数与候选空间构成启发式策略，不提供全局最优性保证。
 
 ## 构建与运行
 
@@ -43,7 +43,7 @@ python3 tools/verify.py --runner build/timeslot_runner
 ./build/timeslot_runner tests/data/example2.txt --trace
 ```
 
-可用 `CXX=g++-16 sh tools/build.sh` 或 `CXX=clang++ sh tools/build.sh` 指定编译器。初次编译完整引擎比编译小型教学代码耗时更长。
+可用 `CXX=g++-16 sh tools/build.sh` 或 `CXX=clang++ sh tools/build.sh` 指定编译器。
 
 也附有 CMake 3.16+ 配置：
 
@@ -63,7 +63,7 @@ src/solution.cpp         按原执行依赖顺序包含18个实现片段
 src/detail/*.inc         配置、状态、放置、DP、重建、搜索与入口
 docs/solution.md         数学模型与完整算法题解
 docs/code-guide.md       代码阅读地图和符号解释
-docs/provenance.md       通用版的来源及删改边界
+docs/provenance.md       实现结构与接口约定
 docs/results.md          本次整理的验证结果
 tools/                  构建、运行、静态检查、独立评分和单文件导出
 tests/                  接口测试与样例输入
@@ -90,10 +90,10 @@ python3 tools/amalgamate.py --out build/Solution.cpp
 
 ## 系列题解
 
-[返回个人参赛题解总目录](https://github.com/XJU-ICTHUB/Huawei-Algorithm-Challenge)
+[返回题解总目录](https://github.com/XJU-ICTHUB/Huawei-Algorithm-Challenge)
 
-| 期数 | 项目 | 题目与阅读入口 |
-|---|---|---|
-| 第38期 | [MemWeave](https://github.com/XJU-ICTHUB/MemWeave) | GPU显存约束调度：[论坛题解](https://bbs.huaweicloud.com/forum/thread-02127222761354471267-1-1.html) |
-| 第39期 | SlotWeave | 固定时隙均衡：[完整题解](docs/solution.md)、[代码导读](docs/code-guide.md) |
+| 期数 | 项目 | 算法说明 | 论坛题解 |
+|---|---|---|---|
+| 第38期 | [MemWeave](https://github.com/XJU-ICTHUB/MemWeave) | [GPU显存约束调度](https://github.com/XJU-ICTHUB/MemWeave/blob/main/docs/GPU显存约束调度_算法说明.md) | [论坛题解](https://bbs.huaweicloud.com/forum/thread-02127222761354471267-1-1.html) |
+| 第39期 | SlotWeave | [固定时隙均衡](docs/solution.md) | 待发表 |
 
