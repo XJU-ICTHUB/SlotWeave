@@ -1,0 +1,22 @@
+#include "solution.h"
+
+// 同一编译单元按原顺序组合；片段共享匿名命名空间、状态和局部宏。
+// 请编译本文件，不要将 detail 片段分别编译。
+#include "detail/00_configuration.inc"
+#include "detail/01_state_and_costs.inc"
+#include "detail/02_seed_search.inc"
+#include "detail/03_swap_descent.inc"
+#include "detail/04_gap_relocation.inc"
+#include "detail/05_vacancy_placement.inc"
+#include "detail/06_chain_dp.inc"
+#include "detail/07_placement_dispatch.inc"
+#include "detail/08_rebuild_layers.inc"
+#include "detail/09_rebuild_policy.inc"
+#include "detail/10_repair_and_polish.inc"
+#include "detail/11_operation_pipeline.inc"
+#include "detail/12_initial_search.inc"
+#include "detail/13_base_api.inc"
+#include "detail/14_base_macro_cleanup.inc"
+#include "detail/15_tiny_engine.inc"
+#include "detail/16_dispatch.inc"
+#include "detail/17_macro_cleanup.inc"

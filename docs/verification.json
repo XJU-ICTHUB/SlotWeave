@@ -1,0 +1,201 @@
+{
+  "status": "PASS",
+  "verified_date": "2026-10-19",
+  "client_timezone": "America/Los_Angeles",
+  "platform": "Darwin arm64",
+  "engine": "full general engine from unfitted competition parent; sample paths removed; two late range knobs reverted",
+  "reported_final_competition_score": 0.85013665,
+  "public_engine_official_score": null,
+  "modules": 18,
+  "renamed_identifiers": 37,
+  "algorithm_entry_comments": 36,
+  "preprocessor_identity": {
+    "configurations": 4,
+    "compilers": [
+      "clang",
+      "gcc"
+    ],
+    "optimization_levels": [
+      "O0",
+      "O2"
+    ],
+    "standard": "C++11",
+    "scope": "exact preprocessed C++ tokens including pragmas, after inverse identifier mapping",
+    "status": "PASS"
+  },
+  "syntax_interface_matrix": {
+    "checks": 12,
+    "standards": [
+      "C++11",
+      "C++14",
+      "C++17"
+    ],
+    "translation_units": [
+      "separate",
+      "single"
+    ],
+    "status": "PASS"
+  },
+  "runtime_identity": {
+    "gcc": {
+      "cases": 399,
+      "mismatched_cases": 0,
+      "scope": "all operation-trajectory hashes, U/V, initial U, extra changes, metadata"
+    },
+    "clang": {
+      "cases": 399,
+      "mismatched_cases": 0,
+      "scope": "all operation-trajectory hashes, U/V, initial U, extra changes, metadata"
+    }
+  },
+  "independent_properties": {
+    "gcc": {
+      "cases": 56,
+      "operations": 4591,
+      "exact_reference_trajectory_cases": 56
+    },
+    "clang": {
+      "cases": 56,
+      "operations": 4591,
+      "exact_reference_trajectory_cases": 56
+    },
+    "sanitized": {
+      "cases": 56,
+      "operations": 4591,
+      "exact_reference_trajectory_cases": null
+    }
+  },
+  "sanitizers": {
+    "address": "PASS",
+    "undefined_behavior": "PASS",
+    "stderr_diagnostics": 0,
+    "leak_sanitizer": "not run; unsupported on this macOS environment"
+  },
+  "primary_build_script": "executed, interface test PASS",
+  "cmake_ctest": "not executed; CMake unavailable locally",
+  "local_timing": {
+    "inputs": 6,
+    "ABBA_cycles_each": 3,
+    "total_median_ratio_min": 0.98602554760643,
+    "total_median_ratio_max": 1.0016795431642593
+  },
+  "quality_retention": {
+    "status": "PASS",
+    "cases": 318,
+    "mean_quality_delta_vs_unstripped_sub121": -0.0010315297410528293,
+    "previous_compact_delta": -0.03486210015723271,
+    "tier_delta": {
+      "sample": -0.02684517261910002,
+      "tiny": 3.346765836070236e-08,
+      "small": -2.8025050482233865e-05,
+      "mid": 1.1801936671767482e-08,
+      "big": -3.1146261799531025e-05
+    },
+    "warning": "Old baseline metrics rounded to6 decimal places; local differences do not map exactly to official score.",
+    "non_sample_cases": 306,
+    "non_sample_quality_delta": -1.9230020345096234e-05
+  },
+  "sources": {
+    "src/detail/00_configuration.inc": {
+      "sha256": "ae244c986adf891f0c146d30dceeddbcb606b5a9d23622d61f79457fbe1f5cd9",
+      "lines": 425,
+      "bytes": 8663
+    },
+    "src/detail/01_state_and_costs.inc": {
+      "sha256": "ddc0a5eb853164a9e26978d3bd6faef50c6db4080aab841ee7e9cc8c30efb3ff",
+      "lines": 1128,
+      "bytes": 28545
+    },
+    "src/detail/02_seed_search.inc": {
+      "sha256": "205329854b5e7ef1f71e79f1f94d782de5bace999dbc29f272020013f167e168",
+      "lines": 571,
+      "bytes": 17149
+    },
+    "src/detail/03_swap_descent.inc": {
+      "sha256": "7012caabbb31d9ad8d4c55a463d4ff4bad7ed6c6aa9776e2ea6b68bf6d388cec",
+      "lines": 2125,
+      "bytes": 73664
+    },
+    "src/detail/04_gap_relocation.inc": {
+      "sha256": "95c91f22be34e1d0189cff221d1d447f36182cadf9440d462ba633e131883280",
+      "lines": 1537,
+      "bytes": 51743
+    },
+    "src/detail/05_vacancy_placement.inc": {
+      "sha256": "ce325ce86612be9d256280fd2d0078b656b04a337cc44c4010e05f9c91e967a7",
+      "lines": 831,
+      "bytes": 26907
+    },
+    "src/detail/06_chain_dp.inc": {
+      "sha256": "476e2309d7903722757496b552795ef0beb3eec4bd52d389924a291cde64bd59",
+      "lines": 2113,
+      "bytes": 58971
+    },
+    "src/detail/07_placement_dispatch.inc": {
+      "sha256": "8a9201797e34d8ea9ebaf59c2adbeddfe07052b813efc6362925333e88f13204",
+      "lines": 1191,
+      "bytes": 35651
+    },
+    "src/detail/08_rebuild_layers.inc": {
+      "sha256": "27bb2fc82426cadc30b713eff5a2d734c2218a1b5f04e49175d1fae5270d9818",
+      "lines": 3007,
+      "bytes": 100787
+    },
+    "src/detail/09_rebuild_policy.inc": {
+      "sha256": "f7cd78b588c975c1a87254c3869509da72c34ec413ada9f8ba33e0714fe91e03",
+      "lines": 710,
+      "bytes": 21370
+    },
+    "src/detail/10_repair_and_polish.inc": {
+      "sha256": "7a363be6c773b440cf687e07ef6c555b287758d13b9d0d450860f1d038683f38",
+      "lines": 1665,
+      "bytes": 56621
+    },
+    "src/detail/11_operation_pipeline.inc": {
+      "sha256": "ba0853eff690360ad48e436af31b79e103b9e7794d3ac722e92a1f3ddfad2e6b",
+      "lines": 1116,
+      "bytes": 46736
+    },
+    "src/detail/12_initial_search.inc": {
+      "sha256": "34e2fbd3b3e90d8addad58789f42ac663767f6cdd5f0735c71a99fbc616283e4",
+      "lines": 288,
+      "bytes": 7977
+    },
+    "src/detail/13_base_api.inc": {
+      "sha256": "6f354037f6b7afc5e607912e98eb030204ca6a61ba5c14ac4771ccbd4b039cc3",
+      "lines": 358,
+      "bytes": 10174
+    },
+    "src/detail/14_base_macro_cleanup.inc": {
+      "sha256": "69c3d41fc303f10066ab2c710985e2078da65730516b8d11ac5466634833720c",
+      "lines": 1132,
+      "bytes": 16753
+    },
+    "src/detail/15_tiny_engine.inc": {
+      "sha256": "d9cf1dec93a3b428b214c57473d15d895360546297e0ddc459da2cbf89abefc1",
+      "lines": 891,
+      "bytes": 24038
+    },
+    "src/detail/16_dispatch.inc": {
+      "sha256": "6183670935ade0c64fd1494b1e05c36ea063cae86aa91c4aaaf7a501c39ea1fc",
+      "lines": 30,
+      "bytes": 953
+    },
+    "src/detail/17_macro_cleanup.inc": {
+      "sha256": "b517ebea31ecbf1cfd70954aa7c8a0d78791bf4bef40912b5cab26f4743d055d",
+      "lines": 26,
+      "bytes": 548
+    },
+    "src/solution.cpp": {
+      "sha256": "9abfa2d201c036ca75ea9fee39b3d1edd63a97dff222987a17be77d33b4c8a49",
+      "lines": 22,
+      "bytes": 894
+    }
+  },
+  "notes": [
+    "No official score has been measured for this public release.",
+    "Local corpus delta is not an official score forecast.",
+    "Trajectory comparisons are made within the same compiler configuration.",
+    "Preprocessor baseline is already stripped of sample/seed fitting, not the original final contest artifact."
+  ]
+}
