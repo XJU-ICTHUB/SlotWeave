@@ -4,7 +4,7 @@
 
 - [算法说明](docs/solution.md)
 - [源码入口](src/solution.cpp) · [接口定义](include/solution.h)
-- 论坛题解：待发表
+- [论坛题解](https://bbs.huaweicloud.com/forum/thread-02127227933062879438-1-1.html)
 
 ## 构建与运行
 
